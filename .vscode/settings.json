@@ -1,0 +1,9 @@
+{
+    "python.defaultInterpreterPath": "~/miniconda/envs/pic2pola/bin/python",
+    "files.exclude": {
+        "**/*.pyc": {"when": "$(basename).py"},
+        "**/__pycache__": true
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}
