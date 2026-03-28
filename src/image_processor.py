@@ -1,7 +1,7 @@
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageFile
 from loguru import logger
-from const import CANVAS_WIDTH, CANVAS_HEIGHT, BORDER_SIZE, CAPTION_SIZE, SYSTEM_FONT, FONT_SIZE, CAPTION_LINE_SPACING
+from const import CANVAS_WIDTH, CANVAS_HEIGHT, BORDER_W_SIZE, BORDER_H_SIZE, CAPTION_SIZE, SYSTEM_FONT, FONT_SIZE, CAPTION_LINE_SPACING
 
 def precess_file(img_path, *, date='', geo='', hashtags='', caption='') -> str:
 
@@ -58,8 +58,8 @@ def process_image(img:ImageFile.ImageFile, *, date='', geo='', hashtags='', capt
 
     img_width, img_height = img.size
 
-    target_width = CANVAS_WIDTH - 2 * BORDER_SIZE
-    target_height = CANVAS_HEIGHT - 2 * BORDER_SIZE - CAPTION_SIZE
+    target_width = CANVAS_WIDTH - 2 * BORDER_W_SIZE
+    target_height = CANVAS_HEIGHT - 2 * BORDER_H_SIZE - CAPTION_SIZE
 
     scale_factor = max(target_width / img_width, target_height / img_height)
 
@@ -107,13 +107,13 @@ def add_text_elements(canvas:Image.Image, *, date='', geo='', hashtags='', capti
     
     # Just imagine a Polaroid photo:
     canvas_width, canvas_height = canvas.size
-    target_width = canvas_width - 2 * BORDER_SIZE
-    target_height = canvas_height - 2 * BORDER_SIZE - CAPTION_SIZE
+    target_width = canvas_width - 2 * BORDER_W_SIZE
+    target_height = canvas_height - 2 * BORDER_H_SIZE - CAPTION_SIZE
 
     img_x = (canvas_width - target_width) // 2
     img_y = (canvas_height - target_height - CAPTION_SIZE) // 2
     
-    text_y_start = img_y + target_height + BORDER_SIZE / 2 
+    text_y_start = img_y + target_height + BORDER_H_SIZE / 2 
 
     # The first line = date + location
     header = ''
