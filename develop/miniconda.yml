@@ -1,0 +1,14 @@
+---
+name: pic2pola
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - loguru
+  - pytest=8.3.3
+  - pytest-cov=4.1.0
+  - pytest-mock=3.15.0
+  - pip=25.3
+  - pip:
+    - pillow==12.1.1
