@@ -54,7 +54,7 @@ def process_image(img:ImageFile.ImageFile, *, date='', geo='', hashtags='', capt
         Image.Image: The processed image
     '''
 
-    canvas = Image.new('RGB', (CANVAS_WIDTH, CANVAS_HEIGHT), '#fafafa')
+    canvas = Image.new('RGB', (CANVAS_WIDTH, CANVAS_HEIGHT), '#ffffff')
 
     img_width, img_height = img.size
 
