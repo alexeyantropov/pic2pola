@@ -19,9 +19,9 @@ def precess_file(img_path, *, date='', geo='', hashtags='', caption='') -> str:
 
     logger.info(f'Processing file: {img_path}')
     logger.info(f'Args: date={date}, geo: {geo}, hashtags: {hashtags}, caption: {caption}')
-    logger.info(f'Output path: {img_path}')
-
+    
     new_img_path = f'polaroid_{os.path.basename(img_path)}'
+    logger.info(f'Output path: {new_img_path}')
 
     try:
         img = Image.open(img_path)

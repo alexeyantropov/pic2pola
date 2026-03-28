@@ -1,6 +1,7 @@
 polaroid_*.jpeg
 tests/pytest-covreport/*
 .DS_Store
+polaroid_*.JPG
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
