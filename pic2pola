@@ -2,5 +2,5 @@
 
 PYTHON="${HOME}/miniconda/envs/pic2pola/bin/python"
 
-$PYTHON ./src/main.py $@
+$PYTHON ./src/main.py "$@"
 
