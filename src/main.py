@@ -12,10 +12,10 @@ def main() -> bool:
     )
     
     if result:
-        logger.info(f'The result is saved to: {result}')
+        logger.info(f'The result is saved to "{result}"')
         return True
     
-    logger.critical(f'Failed to process the image {args.img}')
+    logger.critical(f'Failed to process the image "{args.img}"')
     return False
 
 if __name__ == "__main__":

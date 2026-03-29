@@ -1,5 +1,6 @@
 polaroid_*.jpeg
 tests/pytest-covreport/*
+tests/*_polaroid.jpg
 .DS_Store
 polaroid_*.JPG
 

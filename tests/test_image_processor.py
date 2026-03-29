@@ -36,7 +36,7 @@ class TestImageProcessor(unittest.TestCase):
 
         # ./polaroid_test_image.jpg after tests
         for file in os.listdir('./'):
-            if file.startswith('polaroid_') and file.endswith('.jpg'):
+            if file.startswith('test_') and file.endswith('_polaroid.jpg'):
                 os.remove(f'./{file}')
 
 
