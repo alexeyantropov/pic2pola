@@ -17,16 +17,19 @@ def precess_file(img_path, *, date='', geo='', hashtags='', caption='') -> str:
         str: The path of the written image
     '''
 
-    logger.info(f'Processing file: {img_path}')
-    logger.info(f'Args: date={date}, geo: {geo}, hashtags: {hashtags}, caption: {caption}')
+    logger.info(f'Processing file: "{img_path}"')
+    logger.info(f'Args: date: "{date}", geo: "{geo}", hashtags: "{hashtags}", caption: "{caption}"')
     
-    new_img_path = f'polaroid_{os.path.basename(img_path)}'
-    logger.info(f'Output path: {new_img_path}')
+    # /Users/alexey/Downloads/1.JPG -> 1.JPG -> 1_polaroid.JPG
+    new_img_path = f'{os.path.dirname(img_path)}/\
+{".".join(os.path.basename(img_path).split(".")[:-1])}_polaroid.{os.path.basename(img_path).split(".")[-1]}' 
+
+    logger.info(f'Output path: "{new_img_path}"')
 
     try:
         img = Image.open(img_path)
     except Exception as e:
-        logger.critical(f'Failed to open image {img_path}:\n{e}')
+        logger.critical(f'Failed to open image "{img_path}":\n{e}')
         return ''
 
     new_img = process_image(img, date=date, geo=geo, hashtags=hashtags, caption=caption)
@@ -34,7 +37,7 @@ def precess_file(img_path, *, date='', geo='', hashtags='', caption='') -> str:
     try:
         new_img.save(new_img_path)
     except Exception as e:
-        logger.critical(f'Failed to save image {new_img_path}:\n{e}')
+        logger.critical(f'Failed to save image "{new_img_path}":\n{e}')
         return ''
 
     return new_img_path
